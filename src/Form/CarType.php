@@ -7,7 +7,7 @@ use App\Entity\Owner;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -38,10 +38,8 @@ class CarType extends AbstractType
                     'placeholder' => "Catégorie de voiture"
                 ]
             ])
-            ->add('year', DateType::class, [
-                'label' => "Année de mise en circulation",
-                'widget' => "single_text"
-
+            ->add('year', IntegerType::class, [
+                'label' => "Année de mise en circulation"
             ])
             ->add('milage', TextType::class, [
                 'label' => "Kilométrage",
